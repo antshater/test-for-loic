@@ -13,6 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/turnstiles/{turnstile}/insert-coin', 'TurnstileController@insertCoin')->name('api.turnstiles.insert-coin');
+Route::middleware('auth')->post('/turnstiles/{turnstile}/pass', 'TurnstileController@pass')->name('api.turnstiles.pass');
